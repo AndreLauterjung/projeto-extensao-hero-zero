@@ -1,12 +1,13 @@
 package herozero.project.community.logic;
 
 import herozero.project.community.view.BonusTeamView;
+import herozero.project.community.view.ErrorStyleView;
 import herozero.project.community.model.FichaPersonagem;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 /**
- * Classe com método que armazena o valor referente ao 
+ * Classe com método que pergunta armazena o valor referente ao 
  * bônus de time que o personagem recebe.
  * 
  * @author André Lauterjung
@@ -18,6 +19,7 @@ public class Time
     public void verificarBonusTime(Scanner sc, FichaPersonagem fichaPersonagem)
     {
         BonusTeamView perguntaBonusTime = new BonusTeamView();
+        ErrorStyleView errorMensagem = new ErrorStyleView();
         
         boolean isVerificandoPergunta = true; 
         boolean isVerificandoValor = true;
@@ -28,7 +30,6 @@ public class Time
             String analiseJogadorEquipe = sc.nextLine(); // Armazena o 'sim' ou 'nao'
             String editAnaliseJogadorEquipe = analiseJogadorEquipe.toLowerCase(); // transforma toda a String em letras minúsculas e atribui a uma nova variável
 
-        
             if(editAnaliseJogadorEquipe.equals("sim")) // Início da primeira estrutura condicional.
             {  
                 isVerificandoPergunta = false;
@@ -42,11 +43,8 @@ public class Time
                         sc.nextLine();
                     
                         if(valorBonusTime < 0 ||valorBonusTime >50) // Início da segunda estrutura condicional.
-                        { 
-                            System.out.printf("\nX X X X X X X X X X X X X X X X X X X\n");
-                            System.out.println("    Você digitou um valor inválido!");
-                            System.out.println("        Tente novamente!");
-                            System.out.printf("X X X X X X X X X X X X X X X X X X X\n\n");
+                        {                  
+                            errorMensagem.mensagemNumeroInvalido();
                         }
             
                         else // Caso ele digite um valor maior ou igual a zero ou menor igual a 50
@@ -58,7 +56,6 @@ public class Time
                             fichaPersonagem.getBonusTotal().setBonusTotalCerebro(this.bonusTime);
                             fichaPersonagem.getBonusTotal().setBonusTotalIntuicao(this.bonusTime);
                 
-                
                             System.out.printf("O personagem recebe um bônus de %d%% do time nas habilidades básicas!\n", this.bonusTime);
                             isVerificandoValor = false;
                             
@@ -66,10 +63,8 @@ public class Time
                     }
                     catch(InputMismatchException e)
                     {
-                        System.out.printf("\nX X X X X X X X X X X X X X X X X X X X X X X X X X\n");
-                        System.out.println(" ERRO: Você digitou um caractere onde deve ir número!");
-                        System.out.printf("X X X X X X X X X X X X X X X X X X X X X X X X X X X \n\n");
-                        sc.next();
+                        errorMensagem.mensagemEntradaInvalida();
+                        sc.nextLine();
                     }
                     
                 } // Fim do primeiro loop while
