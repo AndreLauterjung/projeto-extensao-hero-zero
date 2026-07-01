@@ -1,6 +1,7 @@
 package herozero.project.community.logic;
 
 import herozero.project.community.view.HabilidadeTotalView;
+import herozero.project.community.view.ErrorStyleView;
 import herozero.project.community.model.FichaPersonagem;
 
 import java.util.Scanner;
@@ -9,11 +10,7 @@ import java.util.InputMismatchException;
 
 public class HabilidadeTotalLogic
 {
-    boolean isVerificandoHabilidade = true;
-    boolean isVerificandoForcaTotal = true;
-    boolean isVerificandoVigorTotal = true;
-    boolean isVerificandoCerebroTotal = true;
-    boolean isVerificandoIntuicaoTotal = true;
+    boolean isProgramaExecutando = true;
     
     private int forcaTotal;
     private int vigorTotal;
@@ -30,11 +27,9 @@ public class HabilidadeTotalLogic
     public void armazenarHabilidadeTotal(Scanner sc, FichaPersonagem fichaPersonagem)
     {
         HabilidadeTotalView perguntasHabilidadeTotal = new HabilidadeTotalView();
+        ErrorStyleView errorMensagem = new ErrorStyleView();
         
-        
-        
-        
-        while(isVerificandoHabilidade)
+        while(isProgramaExecutando)
         {
             perguntasHabilidadeTotal.mensagemHabToCalc();
             perguntaHabTotal = sc.nextLine(); // Armazenar a habilidade que o usuário quer calcular
@@ -48,17 +43,18 @@ public class HabilidadeTotalLogic
             else
             {
                 this.respHabTotalText = perguntaHabTotal; 
-                isVerificandoHabilidade = false;
+                isProgramaExecutando = false;
             }
             
-        }
+        } // Fechamento do loop while.
            
             
         switch(perguntaHabTotal) 
         {
             case "forca":
                 
-                while(isVerificandoForcaTotal)
+                isProgramaExecutando = true;
+                while(isProgramaExecutando)
                 {
                     try
                     {
@@ -68,8 +64,7 @@ public class HabilidadeTotalLogic
                         
                         if(valorUserForcaTotal < 0)
                         {
-                            System.out.println("ERRO: Você digitou um valor inválido!");
-                            System.out.println("TENTE NOVAMENTE!");
+                            errorMensagem.mensagemNumeroInvalido();
                         }
                         else
                         {
@@ -77,22 +72,22 @@ public class HabilidadeTotalLogic
                             fichaPersonagem.getHabilidadeTotal().setValorForcaTotal(this.forcaTotal);
             
                             System.out.println("Força total do personagem: "+this.forcaTotal);
-                            isVerificandoForcaTotal = false;
+                            isProgramaExecutando = false;
                         }   
                     }
                     catch(InputMismatchException e)
                     {
-                        System.out.println("ERRO: Você digitou uma String onde deve ir número. ");
-                        System.out.println("TENTE NOVAMENTE!");
+                        errorMensagem.mensagemEntradaInvalida();
                         sc.nextLine();
                     }
                
-                } // Fechamento do loop while.
+                } // Fechamento do loop while: força.
                 break;
                 
             case "vigor":
                 
-                while(isVerificandoVigorTotal)
+                isProgramaExecutando = true;
+                while(isProgramaExecutando)
                 {
                     try
                     {
@@ -102,8 +97,7 @@ public class HabilidadeTotalLogic
                         
                         if(valorUserVigorTotal < 0)
                         {
-                            System.out.println("ERRO: Você digitou um valor inválido!");
-                            System.out.println("TENTE NOVAMENTE!");
+                            errorMensagem.mensagemNumeroInvalido();
                         }
                         else
                         {
@@ -111,25 +105,25 @@ public class HabilidadeTotalLogic
             
                             fichaPersonagem.getHabilidadeTotal().setValorVigorTotal(this.vigorTotal);
                             System.out.println("Vigor total do personagem: "+this.vigorTotal);
-                            isVerificandoVigorTotal = false;
+                            isProgramaExecutando = false;
                         }
    
                     }
                     catch(InputMismatchException e)
                     {
-                        System.out.println("ERRO: Você digitou uma String onde deve ir número. ");
-                        System.out.println("TENTE NOVAMENTE!");
+                        errorMensagem.mensagemEntradaInvalida();;
                         sc.nextLine();
                     }
 
-                } // Fechamento do loop while -> vigor.
+                } // Fechamento do loop while: vigor.
                 break;
                 
                 
     
             case "cerebro":
                 
-                while(isVerificandoCerebroTotal)
+                isProgramaExecutando = true;
+                while(isProgramaExecutando)
                 {
                     try
                     {
@@ -140,8 +134,7 @@ public class HabilidadeTotalLogic
                         
                         if(valorUserCerebroTotal < 0)
                         {
-                            System.out.println("ERRO: Você digitou um valor inválido!");
-                            System.out.println("TENTE NOVAMENTE!");
+                            errorMensagem.mensagemNumeroInvalido();
                         }
                         else
                         {
@@ -149,21 +142,21 @@ public class HabilidadeTotalLogic
             
                             fichaPersonagem.getHabilidadeTotal().setValorCerebroTotal(this.cerebroTotal);
                             System.out.println("Cérebro total do personagem: "+this.cerebroTotal);
-                            isVerificandoCerebroTotal = false;
+                            isProgramaExecutando = false;
                         }
                     }
                     catch(InputMismatchException e)
                     {
-                        System.out.println("ERRO: Você digitou uma String onde deve ir número. ");
-                        System.out.println("TENTE NOVAMENTE!");
+                        errorMensagem.mensagemEntradaInvalida();
                         sc.nextLine();
                     }
-                } // Fechamento do loop while -> cérebro.    
+                } // Fechamento do loop while: cérebro.    
                 break;
                 
             case "intuicao":
                 
-                while(isVerificandoIntuicaoTotal)
+                isProgramaExecutando = true;
+                while(isProgramaExecutando)
                 {
                     try
                     {
@@ -173,8 +166,7 @@ public class HabilidadeTotalLogic
                         
                         if(valorUserIntuicaoTotal < 0)
                         {
-                            System.out.println("ERRO: Você digitou um valor inválido!");
-                            System.out.println("TENTE NOVAMENTE!");
+                            errorMensagem.mensagemNumeroInvalido();
                         }
                         else
                         {
@@ -182,26 +174,26 @@ public class HabilidadeTotalLogic
                             fichaPersonagem.getHabilidadeTotal().setValorIntuicaoTotal(this.intuicaoTotal);
                             
                             System.out.println("Intuição total do personagem: "+this.intuicaoTotal);
-                            isVerificandoIntuicaoTotal = false;
+                            isProgramaExecutando = false;
                         }
                         
                     }
                     catch(InputMismatchException e)
                     {
-                        System.out.println("ERRO: Você digitou uma String onde deve ir número. ");
-                        System.out.println("TENTE NOVAMENTE!");
+                        errorMensagem.mensagemEntradaInvalida();
                         sc.nextLine();
                     }
-                } // Fechamento loop while -> intuição.
+                } // Fechamento loop while: intuição.
                 break;
                 
-        } // fechamento do switch case
+        } // Fechamento do switch case
         
-    } // fechamento do método armazenarHabilidadeTotal
+    } // Fechamento do método armazenarHabilidadeTotal.
     
    
     public String getRespHabTotalText()
     {
         return this.respHabTotalText;
     }
+    
 }  // fechamento da classe
