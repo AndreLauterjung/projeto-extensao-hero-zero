@@ -2,6 +2,7 @@ package herozero.project.community.logic;
 
 import herozero.project.community.view.BonusEsconderijoView;
 import herozero.project.community.model.FichaPersonagem;
+import herozero.project.community.view.ErrorStyleView;
 
 import java.util.Scanner;
 import java.util.InputMismatchException;
@@ -18,6 +19,7 @@ public class EsconderijoHeroico
     public void verificarBonusEsconderijo(Scanner sc, FichaPersonagem fichaPersonagem)
     {
         BonusEsconderijoView perguntaBonusEsconderijo = new BonusEsconderijoView();
+        ErrorStyleView errorMensagem = new ErrorStyleView();
         
         int valorEntradaBonusEsconderijo;
         boolean isCalculandoBonusEsconderijo = true;
@@ -32,10 +34,7 @@ public class EsconderijoHeroico
                 
                 if(valorEntradaBonusEsconderijo < 0 || valorEntradaBonusEsconderijo > 25)
                 {                
-                    System.out.printf("\nX X X X X X X X X X X X X X X X X X X\n");
-                    System.out.println("    Você digitou um valor inválido!");
-                    System.out.println("        Tente novamente!");
-                    System.out.printf("X X X X X X X X X X X X X X X X X X X\n\n");
+                    errorMensagem.mensagemNumeroInvalido();
                 }
 
                 else // Caso o usuário digite um valor maior ou igual a 0 ou menor igual a 25.
@@ -53,10 +52,8 @@ public class EsconderijoHeroico
             }
             catch(InputMismatchException e)
             {
-                System.out.printf("\nX X X X X X X X X X X X X X X X X X X X X X X X X X\n");
-                System.out.println(" ERRO: Você digitou um caractere onde deve ir número!");
-                System.out.printf("X X X X X X X X X X X X X X X X X X X X X X X X X X X \n\n");
-                sc.next();
+                errorMensagem.mensagemEntradaInvalida();
+                sc.nextLine();
             }   
         } // Fim do loop while.
         
