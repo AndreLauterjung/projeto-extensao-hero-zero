@@ -17,7 +17,7 @@ public class CalculoFinalHabilidadeBasica
     Exemplo para calcular a força básica do personagem:
         
     1º Passo: habilidadeTotalForca - pontosHailidadeEquipamentosPetForca
-    2º Passo: habilidadeBasica + bonusTotal
+    2º Passo: Somar todos os bônus acrescentados na força básica
     3º Passo: habilidadeBasica = resultadoSubForcaTotEquipPet / (1+(bonusTotal/100)) */
     
     public void calculoFinalHabilidadeBasica(HabilidadeTotalLogic habilidadeTotal, FichaPersonagem fichaPersonagem)
@@ -52,11 +52,15 @@ public class CalculoFinalHabilidadeBasica
                 // Adiciona o valor da força básica na classe HabilidadeBasica.
                 fichaPersonagem.getHabilidadeBasica().setForcaBasic(habilidadeBasicaForca);
                 
-                System.out.printf("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n");
+                System.out.println("=========================================================================================");
                 System.out.println("BÔNUS TOTAL QUE O PERSONAGEM RECEBE NA FORÇA: "+bonusTotalForca+"%%");
+                System.out.println("=========================================================================================");
                 System.out.println("TOTAL DE PONTOS DE HABILIDADE NA FORÇA: "+forcaTotalPersonagem);
+                System.out.println("=========================================================================================");
                 System.out.println("TOTAL DE PONTOS QUE OS OBJETOS ACRESCENTAM À FORÇA: "+totalForcaEquipamentosPet);
-                System.out.printf("VALOR APROXIMADO DE FORÇA BÁSICA QUE O PERSONAGEM POSSUI: %.1f PONTOS.\n\n", habilidadeBasicaForca);
+                System.out.println("=========================================================================================");
+                System.out.printf("VALOR APROXIMADO DE FORÇA BÁSICA QUE O PERSONAGEM POSSUI: %.1f PONTOS.\n", habilidadeBasicaForca);
+                System.out.println("=========================================================================================");
                 
                 /* Retornar ao usuário o valor da habilidade total para que ele consiga
                 verificar se o cálculo de habilidade básica funcionou corretamente. */
@@ -64,7 +68,8 @@ public class CalculoFinalHabilidadeBasica
                 double habilidadeTotalAprox = somaHabTotBonTot + totalForcaEquipamentosPet;
         
                 System.out.printf("VALOR APROXIMADO DA HABILIDADE TOTAL NA FORÇA COM BASE NOS DADOS DIGITADOS PELO USUÁRIO: %.1f\n", habilidadeTotalAprox);
-                System.out.printf("ATENÇÃO: caso o valor seja próximo ou exato ao total de habilidade do personagem, \nsignifica que a habilidade básica foi calculada corretamente!");
+                System.out.printf("ATENÇÃO: caso o valor seja próximo ou exato ao total de habilidade do personagem, \nsignifica que a habilidade básica foi calculada corretamente!\n");
+                System.out.println("=========================================================================================");
                 break;
             
             case "vigor":
@@ -86,19 +91,24 @@ public class CalculoFinalHabilidadeBasica
                 // Adiciona o valor do vigor básico na classe HabilidadeBasica.
                 fichaPersonagem.getHabilidadeBasica().setVigorBasic(habilidadeBasicaVigor);
                 
-                System.out.printf("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n");
+                System.out.println("=========================================================================================");
                 System.out.println("BÔNUS TOTAL QUE O PERSONAGEM RECEBE NO VIGOR: "+bonusTotalVigor+"%%");
+                System.out.println("=========================================================================================");
                 System.out.println("TOTAL DE PONTOS DE HABILIDADE NO VIGOR: "+vigorTotalPersonagem);
+                System.out.println("=========================================================================================");
                 System.out.println("TOTAL DE PONTOS QUE OS OBJETOS ACRESCENTAM AO VIGOR: "+totalVigorEquipamentosPet);
-                System.out.printf("VALOR APROXIMADO DE VIGOR BÁSICO QUE O PERSONAGEM POSSUI: %.1f PONTOS.\n\n", habilidadeBasicaVigor);
-                
+                System.out.println("=========================================================================================");
+                System.out.printf("VALOR APROXIMADO DE VIGOR BÁSICO QUE O PERSONAGEM POSSUI: %.1f PONTOS.\n", habilidadeBasicaVigor);
+                System.out.println("=========================================================================================");
                 /* Retornar ao usuário o valor da habilidade total para que ele consiga
                 verificar se o cálculo de habilidade básica funcionou corretamente. */
                 double somaHabTotBonTotV = habilidadeBasicaVigor * (1+(bonusTotalVigor/100));
                 double habilidadeTotalAproxV = somaHabTotBonTotV + totalVigorEquipamentosPet;
-        
+                
+                
                 System.out.printf("VALOR APROXIMADO DA HABILIDADE TOTAL NO VIGOR COM BASE NOS DADOS DIGITADOS PELO USUÁRIO: %.1f\n", habilidadeTotalAproxV);
-                System.out.printf("ATENÇÃO: caso o valor seja próximo ou exato ao total de habilidade do personagem, \nsignifica que a habilidade básica foi calculada corretamente!");
+                System.out.printf("ATENÇÃO: caso o valor seja próximo ou exato ao total de habilidade do personagem, \nsignifica que a habilidade básica foi calculada corretamente!\n");
+                System.out.printf("=========================================================================================");
                 break;
                 
             case "cerebro":
@@ -120,19 +130,23 @@ public class CalculoFinalHabilidadeBasica
                 // Adiciona o valor do cérebro básico na classe HabilidadeBasica.
                 fichaPersonagem.getHabilidadeBasica().setCerebroBasic(habilidadeBasicaCerebro);
                  
-                System.out.printf("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n");
+                System.out.println("=========================================================================================");
                 System.out.println("BÔNUS TOTAL QUE O PERSONAGEM RECEBE NO CÉREBRO: "+bonusTotalCerebro+"%%");
+                System.out.println("=========================================================================================");
                 System.out.println("TOTAL DE PONTOS DE HABILIDADE NO CÉREBRO: "+cerebroTotalPersonagem);
+                System.out.println("=========================================================================================");
                 System.out.println("TOTAL DE PONTOS QUE OS OBJETOS ACRESCENTAM AO CÉREBRO: "+totalCerebroEquipamentosPet);
-                System.out.printf("VALOR APROXIMADO DE CÉREBRO BÁSICO QUE O PERSONAGEM POSSUI: %.1f PONTOS.\n\n", habilidadeBasicaCerebro);
-                        
+                System.out.println("=========================================================================================");
+                System.out.printf("VALOR APROXIMADO DE CÉREBRO BÁSICO QUE O PERSONAGEM POSSUI: %.1f PONTOS.\n", habilidadeBasicaCerebro);
+                System.out.println("=========================================================================================");
                 /* Retornar ao usuário o valor da habilidade total para que ele consiga
                 verificar se o cálculo de habilidade básica funcionou corretamente. */
                 double somaHabTotBonTotC = habilidadeBasicaCerebro * (1+(bonusTotalCerebro/100));
                 double habilidadeTotalAproxC = somaHabTotBonTotC + totalCerebroEquipamentosPet;
         
                 System.out.printf("VALOR APROXIMADO DA HABILIDADE TOTAL NO CÉREBRO COM BASE NOS DADOS DIGITADOS PELO USUÁRIO: %.1f\n", habilidadeTotalAproxC);
-                System.out.printf("ATENÇÃO: caso o valor seja próximo ou exato ao total de habilidade do personagem, \nsignifica que a habilidade básica foi calculada corretamente!");
+                System.out.printf("ATENÇÃO: caso o valor seja próximo ou exato ao total de habilidade do personagem, \nsignifica que a habilidade básica foi calculada corretamente!\n");
+                System.out.println("=========================================================================================");
                 break;
                                
             case "intuicao":
@@ -154,12 +168,15 @@ public class CalculoFinalHabilidadeBasica
                 // Adiciona o valor da intuição básica na classe HabilidadeBasica.
                 fichaPersonagem.getHabilidadeBasica().setIntuicaoBasic(habilidadeBasicaIntuicao);
                  
-                System.out.printf("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n");
+                System.out.println("=========================================================================================");
                 System.out.println("BONUS TOTAL QUE O PERSONAGEM RECEBE NA INTUIÇÃO: "+bonusTotalIntuicao+"%%");
+                System.out.println("=========================================================================================");
                 System.out.println("TOTAL DE PONTOS DE HABILIDADE NA INTUIÇÃO: "+intuicaoTotalPersonagem);
+                System.out.println("=========================================================================================");
                 System.out.println("TOTAL DE PONTOS QUE OS OBJETOS ACRESCENTAM À INTUIÇÃO: "+totalIntuicaoEquipamentosPet);
-                System.out.printf("VALOR APROXIMADO DE INTUIÇÃO BÁSICA QUE O PERSONAGEM POSSUI: %.1f PONTOS.\n\n", habilidadeBasicaIntuicao);
-                                
+                System.out.println("=========================================================================================");
+                System.out.printf("VALOR APROXIMADO DE INTUIÇÃO BÁSICA QUE O PERSONAGEM POSSUI: %.1f PONTOS.\n", habilidadeBasicaIntuicao);
+                System.out.println("=========================================================================================");
                 /* Retornar ao usuário o valor da habilidade total para que ele consiga
                 verificar se o cálculo de habilidade básica funcionou corretamente. */
                 double somaHabTotBonTotI = habilidadeBasicaIntuicao * (1+(bonusTotalIntuicao/100));
@@ -167,6 +184,7 @@ public class CalculoFinalHabilidadeBasica
         
                 System.out.printf("VALOR APROXIMADO DA HABILIDADE TOTAL NA INTUIÇÃO COM BASE NOS DADOS DIGITADOS PELO USUÁRIO: %.1f\n", habilidadeTotalAproxI);
                 System.out.printf("ATENÇÃO: caso o valor seja próximo ou exato ao total de habilidade do personagem, \nsignifica que a habilidade básica foi calculada corretamente!\n");
+                System.out.println("=========================================================================================");
                 break;
                 
             default:
