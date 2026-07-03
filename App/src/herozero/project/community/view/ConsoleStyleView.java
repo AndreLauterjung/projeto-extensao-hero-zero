@@ -23,9 +23,14 @@ public class ConsoleStyleView
         System.out.println("********************************************************************************");
     }
     
-    public void linhaVisualDivisoria()
+    public void linhaVisualDivisoriaAst()
     {
         System.out.printf("\n***************************************************************************\n\n");
+    }
+    
+    public void linhaVisualDivisoriaIg()
+    {
+        System.out.println("=========================================================================================");
     }
     
 }
