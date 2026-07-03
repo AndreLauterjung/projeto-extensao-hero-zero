@@ -59,50 +59,50 @@ public class Main
         habilidades básicas do personagem. */
         energetico.verificarEnergetico(sc, fichaPersonagem);
           
-        consoleStyle.linhaVisualDivisoria();
+        consoleStyle.linhaVisualDivisoriaAst();
         
        
         /* Calculando o bônus que a Liga acrescenta nas habilidades básicas 
         do personagem. */
         liga.verificarLiga(sc, fichaPersonagem);
-        consoleStyle.linhaVisualDivisoria();
+        consoleStyle.linhaVisualDivisoriaAst();
 
         
         // Calcular bônus que o time atribui às habilidades básicas.
         time.verificarBonusTime(sc, fichaPersonagem);
-        consoleStyle.linhaVisualDivisoria();
+        consoleStyle.linhaVisualDivisoriaAst();
         
         
         /* Calculando bônus que o Laboratório de Pesquisa cibernético 
         acrescenta às habilidades básicas do personagem. */
         esconderijo.verificarBonusEsconderijo(sc, fichaPersonagem);
-        consoleStyle.linhaVisualDivisoria();
+        consoleStyle.linhaVisualDivisoriaAst();
         
         
         // Calcular bônus da habilidade do pet equipado.
         habilidadePet.escolhaHabilidade(sc, fichaPersonagem);
-        consoleStyle.linhaVisualDivisoria();
+        consoleStyle.linhaVisualDivisoriaAst();
         
         
         // Calcular o bônus de temporada. 
         temporada.verificacaoBonusTemporada(sc, fichaPersonagem); 
-        consoleStyle.linhaVisualDivisoria();
+        consoleStyle.linhaVisualDivisoriaAst();
         
        
         // Calcular bônus do conjunto de equipamentos equipados.
         bonusEquipamentos.verificarConjuntos(sc, fichaPersonagem);    
-        consoleStyle.linhaVisualDivisoria();
+        consoleStyle.linhaVisualDivisoriaAst();
         
     
         /* Perguntar ao usuário qual habilidade a ser calculada e solicitar 
         que o usuário informe o valor de habilidade total. */
         habilidadeTotal.armazenarHabilidadeTotal(sc, fichaPersonagem);
-        consoleStyle.linhaVisualDivisoria();
+        consoleStyle.linhaVisualDivisoriaAst();
         
         
         // Calcular atributos dos equipamentos e pet equipados no personagem.
         atributosEquipamentosPet.calcularAtributosEquipPet(sc, habilidadeTotal, fichaPersonagem); 
-        consoleStyle.linhaVisualDivisoria();
+        consoleStyle.linhaVisualDivisoriaAst();
         
 
         // Parte final do programa, onde são excutados os calculos finais.
