@@ -55,10 +55,14 @@ public class Main
  
         consoleStyle.mensagemInicio();
               
+        // Calcular o bônus de temporada. 
+        temporada.verificacaoBonusTemporada(sc, fichaPersonagem); 
+        consoleStyle.linhaVisualDivisoriaAst();
+        
+        
         /* Calculando o bônus que o energético de habilidade acrescenta nas 
         habilidades básicas do personagem. */
         energetico.verificarEnergetico(sc, fichaPersonagem);
-          
         consoleStyle.linhaVisualDivisoriaAst();
         
        
@@ -83,12 +87,7 @@ public class Main
         habilidadePet.escolhaHabilidade(sc, fichaPersonagem);
         consoleStyle.linhaVisualDivisoriaAst();
         
-        
-        // Calcular o bônus de temporada. 
-        temporada.verificacaoBonusTemporada(sc, fichaPersonagem); 
-        consoleStyle.linhaVisualDivisoriaAst();
-        
-       
+
         // Calcular bônus do conjunto de equipamentos equipados.
         bonusEquipamentos.verificarConjuntos(sc, fichaPersonagem);    
         consoleStyle.linhaVisualDivisoriaAst();
