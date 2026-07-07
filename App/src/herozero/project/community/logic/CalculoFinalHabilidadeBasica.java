@@ -54,7 +54,7 @@ public class CalculoFinalHabilidadeBasica
                 fichaPersonagem.getHabilidadeBasica().setForcaBasic(habilidadeBasicaForca);
                 
                 styleView.linhaVisualDivisoriaIg();
-                System.out.println("BÔNUS TOTAL QUE O PERSONAGEM RECEBE NA FORÇA: "+bonusTotalForca+"%");
+                System.out.printf("BÔNUS TOTAL QUE O PERSONAGEM RECEBE NA FORÇA: %.1f%%\n", bonusTotalForca);
                 styleView.linhaVisualDivisoriaIg();
                 System.out.println("TOTAL DE PONTOS DE HABILIDADE NA FORÇA: "+forcaTotalPersonagem);
                 styleView.linhaVisualDivisoriaIg();
@@ -93,7 +93,7 @@ public class CalculoFinalHabilidadeBasica
                 fichaPersonagem.getHabilidadeBasica().setVigorBasic(habilidadeBasicaVigor);
                 
                 styleView.linhaVisualDivisoriaIg();
-                System.out.println("BÔNUS TOTAL QUE O PERSONAGEM RECEBE NO VIGOR: "+bonusTotalVigor+"%");
+                System.out.printf("BÔNUS TOTAL QUE O PERSONAGEM RECEBE NO VIGOR: %.1f%%\n", bonusTotalVigor);
                 styleView.linhaVisualDivisoriaIg();
                 System.out.println("TOTAL DE PONTOS DE HABILIDADE NO VIGOR: "+vigorTotalPersonagem);
                 styleView.linhaVisualDivisoriaIg();
@@ -132,7 +132,7 @@ public class CalculoFinalHabilidadeBasica
                 fichaPersonagem.getHabilidadeBasica().setCerebroBasic(habilidadeBasicaCerebro);
                  
                 styleView.linhaVisualDivisoriaIg();
-                System.out.println("BÔNUS TOTAL QUE O PERSONAGEM RECEBE NO CÉREBRO: "+bonusTotalCerebro+"%");
+                System.out.printf("BÔNUS TOTAL QUE O PERSONAGEM RECEBE NO CÉREBRO: %.1f%%\n"+bonusTotalCerebro);
                 styleView.linhaVisualDivisoriaIg();
                 System.out.println("TOTAL DE PONTOS DE HABILIDADE NO CÉREBRO: "+cerebroTotalPersonagem);
                 styleView.linhaVisualDivisoriaIg();
@@ -170,7 +170,7 @@ public class CalculoFinalHabilidadeBasica
                 fichaPersonagem.getHabilidadeBasica().setIntuicaoBasic(habilidadeBasicaIntuicao);
                  
                 styleView.linhaVisualDivisoriaIg();
-                System.out.println("BONUS TOTAL QUE O PERSONAGEM RECEBE NA INTUIÇÃO: "+bonusTotalIntuicao+"%");
+                System.out.printf("BONUS TOTAL QUE O PERSONAGEM RECEBE NA INTUIÇÃO: %.1f%%\n", bonusTotalIntuicao);
                 styleView.linhaVisualDivisoriaIg();
                 System.out.println("TOTAL DE PONTOS DE HABILIDADE NA INTUIÇÃO: "+intuicaoTotalPersonagem);
                 styleView.linhaVisualDivisoriaIg();
