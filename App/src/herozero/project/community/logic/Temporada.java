@@ -36,6 +36,43 @@ public class Temporada
         String pergunta = "";       
         int valorBonusTemporada = -1;
         
+        boolean isCalculaTemporada = true;
+        String perguntaCalcTemp = "";
+        
+           
+        while(isCalculaTemporada)
+        {
+            try
+            {
+                System.out.println("Você deseja calcular as habilidades com bônus de temporada?");
+                System.out.println("Digite \"sim\" ou \"não\"");
+                perguntaCalcTemp = sc.nextLine();
+                perguntaCalcTemp = perguntaCalcTemp.toLowerCase();
+                
+                if(perguntaCalcTemp.equals("sim"))
+                {
+                    isCalculaTemporada = false;
+                }
+                else if(perguntaCalcTemp.equals("nao") || perguntaCalcTemp.equals("não"))
+                {
+                    isCalculaTemporada = false;
+                    isPerguntandoTemporada = false;
+                }
+                else
+                {
+                    errorMensagem.mensagemOpcaoErro();
+                }  
+            }
+            catch(InputMismatchException e)
+            {
+                errorMensagem.mensagemEntradaInvalida();
+                sc.nextLine();
+            }
+            
+        } // Fechamento do loop while
+        
+        
+        
         /* Loop para primeira parte referente ao bônus de temporada
         onde o usuário digitará se o personagem recebe ou não um bônus de temporada */
         while(isPerguntandoTemporada) 

@@ -22,7 +22,7 @@ public class Liga
     {
         boolean isVerificandoLiga = true;
         int opcaoLiga = -1;
-        
+
         while(isVerificandoLiga)
         {
             try
@@ -51,6 +51,5 @@ public class Liga
             }
         }  
        
-    } // Fechamento do método verificarLiga. 
-    
+    } // Fechamento do método verificarLiga.   
 } // Fechamento da classe.
