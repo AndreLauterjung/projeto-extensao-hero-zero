@@ -19,7 +19,7 @@ import java.util.Scanner;
 
 /**=== HISTÓRICO DE VERSÕES ===
 
-[v1.1.0] - 03/06/2026
+[v1.1.0] - 07/07/2026
 * Projeto: Calculadora de Habilidade básica Hero Zero
 * Versão atual: 1.1.0
 * Desenvolvedor: André Lauterjung
@@ -29,6 +29,11 @@ import java.util.Scanner;
 * e também o programa realiza um cálculo retornando a habilidade total aproximada
 * que o personagem possui, o que valida o resultado da habilidade básica calculada.
 * 
+* Também é possível escolher se deseja calcular com ou sem o bônus de temporada.
+* 
+* Foi adicionado também o tratamento de erros para evitar que o programa pare
+* quando um valor inválido for digitado, tornando a utilização da ferramenta mais 
+* entendível e evitando que resultados errados sejam retornados.
 */
 
 public class Main
